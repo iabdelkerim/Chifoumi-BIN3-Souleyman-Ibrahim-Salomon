@@ -42,8 +42,13 @@ function Login() {
                 console.log(jwtDecode(data.token));
             });
     }
+
+    function redirectToMatchList() {
+        window.location.href = '/matchList';
+    }
+
     return user ? (
-        <span>Already Logged</span>
+        redirectToMatchList()
     ) : (
         <View backgroundColor="static-black" width="50%" height="100%">
             <View padding="size-500">
