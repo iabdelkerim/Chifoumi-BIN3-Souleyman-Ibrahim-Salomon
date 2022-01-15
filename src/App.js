@@ -14,6 +14,7 @@ function App() {
                 <Route exact path="/" />
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/matchList" component={MatchList} />
+                <Route exact path="/play" component={MatchPlay} />
             </Switch>
         </Provider>
     );
