@@ -5,12 +5,8 @@ import {
     Flex,
     Form,
     TextField,
-    Image,
     Text,
-    ActionButton,
-    ProgressCircle,
-    Heading,
-    Link
+    ActionButton
 } from '@adobe/react-spectrum';
 
 function Login() {
