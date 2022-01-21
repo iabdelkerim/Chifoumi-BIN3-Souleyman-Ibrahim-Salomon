@@ -5,6 +5,8 @@ import { Route, Switch } from 'react-router-dom';
 import { Provider, lightTheme } from '@adobe/react-spectrum';
 import Login from './auth/login';
 import MatchList from './components/MatchList';
+import MatchPlay from './components/MatchPlay';
+
 
 function App() {
     return (
