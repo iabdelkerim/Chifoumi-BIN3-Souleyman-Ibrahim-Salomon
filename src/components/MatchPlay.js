@@ -1,8 +1,18 @@
 import React from 'react';
 import { Button, Flex } from '@adobe/react-spectrum';
+import { useEffect, useState } from 'react';
 
 function MatchPlay() {
-
+    const [play, setPlay] = useState();
+    useEffect(() => {
+        fetch('http://fauques.freeboxos.fr:3000/matches/:id', {
+            headers: {
+                Authorization: 'Bearer ' + localStorage.getItem('token')
+            }
+        })
+            .then(res => res.json())
+            .then(data => setPlay(data));
+    }, []);
 
     return (
         <>
@@ -30,6 +40,21 @@ function MatchPlay() {
                 <Button width="size-1200" >Scissors</Button>
             </Flex>
             
+            {play?.map(player => (
+                <Flex
+                    direction="row" 
+                    alignItems="center"
+                    justifyContent="center"
+                    alignContent="center"
+                    
+                    gap="size-100"
+                >
+                    <p><h5> user :  {player.user1} - 0</h5></p>
+                </Flex>
+                
+            ))}
+            
+            
             <Flex
                 direction="row" 
                 alignItems="center"
@@ -46,3 +71,4 @@ function MatchPlay() {
 }
 
 export default MatchPlay
+
