@@ -1,13 +1,14 @@
 import React from 'react';
-import { Button, Flex, Heading } from '@adobe/react-spectrum';
+import { Button, Flex, Heading, View } from '@adobe/react-spectrum';
 import { useEffect, useState } from 'react';
+import Player from './player';
 
 function MatchPlay() {
-    const [play, setPlay] = useState();
+    const [play, setPlay] = useState([]);
 
     useEffect(() => {
         fetch(
-            'http://fauques.freeboxos.fr:3000/matches/?id=61eafe2a9776211826834e72',
+            'http://fauques.freeboxos.fr:3000/matches/?id=61eed4a29776211826838be1',
             {
                 method: 'GET',
                 headers: {
@@ -17,10 +18,20 @@ function MatchPlay() {
         )
             .then(res => res.json())
             .then(data => setPlay(data));
-    }, [play]);
+    }, []);
+
+    function PlayertList() {
+        return (
+            <>
+                {play?.map(player => (
+                    <Player player={player} />
+                ))}
+            </>
+        );
+    }
 
     return (
-        <>
+        <View>
             <Flex
                 direction="row"
                 alignItems="center"
@@ -43,19 +54,7 @@ function MatchPlay() {
                 <Button width="size-800">Paper</Button>
                 <Button width="size-1200">Scissors</Button>
             </Flex>
-
-            {play?.map(player => (
-                <Flex
-                    direction="row"
-                    alignItems="center"
-                    justifyContent="center"
-                    alignContent="center"
-                    gap="size-100"
-                >
-                    <Heading level={3}> user : {player.user1} - 0</Heading>
-                </Flex>
-            ))}
-
+            <PlayertList />
             <Flex
                 direction="row"
                 alignItems="center"
@@ -65,7 +64,7 @@ function MatchPlay() {
             >
                 <Heading level={4}> Score : 0 - 0</Heading>
             </Flex>
-        </>
+        </View>
     );
 }
 

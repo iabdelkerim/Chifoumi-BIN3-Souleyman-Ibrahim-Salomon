@@ -8,7 +8,8 @@ import {
     Content,
     Dialog,
     Heading,
-    DialogContainer
+    DialogContainer,
+    View
 } from '@adobe/react-spectrum';
 import { useEffect, useState } from 'react';
 
@@ -120,15 +121,15 @@ function MatchList() {
             >
                 <Button onPress={disconnect}>Log out</Button>
             </Flex>
-            <ul>
+            <View>
                 {modalPlayer()}
                 {createButton()}
                 {matchs === undefined && <span>Loading...</span>}
                 {matchs?.length === 0 && <span>No data</span>}
                 {matchs?.map(match => (
-                    <li>{match._id}</li>
+                    <li key={match._id}>{match._id}</li>
                 ))}
-            </ul>
+            </View>
         </>
     );
 }
