@@ -2,7 +2,7 @@ import './App.css';
 
 import { Route, Switch } from 'react-router-dom';
 
-import { Provider, lightTheme } from '@adobe/react-spectrum';
+import { Provider, defaultTheme } from '@adobe/react-spectrum';
 import Login from './auth/login';
 import MatchList from './components/MatchList';
 import MatchPlay from './components/MatchPlay';
@@ -10,7 +10,7 @@ import MatchPlay from './components/MatchPlay';
 
 function App() {
     return (
-        <Provider colorScheme="light" theme={lightTheme}>
+        <Provider colorScheme="dark" theme={defaultTheme} scale="large">
             <Switch>
                 <Route exact path="/" component={Login} />
                 <Route exact path="/login" component={Login} />
