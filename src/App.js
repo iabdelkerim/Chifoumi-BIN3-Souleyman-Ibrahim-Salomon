@@ -5,7 +5,8 @@ import { Route, Switch } from 'react-router-dom';
 
 import { Provider, lightTheme } from '@adobe/react-spectrum';
 import Login from './auth/login';
-import MatchList from './components/MatchList';
+import{ Article, Navbar, MatchList, MatchPlay, Button} from ('./components')
+
 
 function App() {
     return (
