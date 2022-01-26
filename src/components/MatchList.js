@@ -67,11 +67,12 @@ function MatchList() {
                     )
                         .then(res => res.json())
                         .then(data => {
-                            console.log('get latch', data);
+                            console.log(data);
                         });
                 } else {
                     window.location.href = '/play';
                     <MatchPlay id={data._id} />;
+                    setPlayer2(data._id);
                 }
             });
         setShow(false);
@@ -79,6 +80,7 @@ function MatchList() {
     const closeModal = () => {
         setShow(false);
     };
+    console.log('user2', user2);
 
     function modalPlayer() {
         return (

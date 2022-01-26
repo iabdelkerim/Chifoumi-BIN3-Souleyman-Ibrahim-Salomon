@@ -3,7 +3,6 @@ import { Button, Flex, Heading, View } from '@adobe/react-spectrum';
 
 function Player(player) {
     const { user1, user2 } = player?.player;
-    console.log('user', user1);
     return (
         <Flex
             direction="row"
