@@ -3,21 +3,20 @@ import { Button, Flex, Heading, View } from '@adobe/react-spectrum';
 import { useEffect, useState } from 'react';
 import Player from './player';
 
-function MatchPlay() {
+function MatchPlay(id) {
     const [play, setPlay] = useState([]);
 
     useEffect(() => {
-        fetch(
-            'http://fauques.freeboxos.fr:3000/matches/?id=61eed4a29776211826838be1',
-            {
-                method: 'GET',
-                headers: {
-                    Authorization: 'Bearer ' + localStorage.getItem('token')
-                }
+        fetch(`http://fauques.freeboxos.fr:3000/matches/?id='${id}`, {
+            method: 'GET',
+            headers: {
+                Authorization: 'Bearer ' + localStorage.getItem('token')
             }
-        )
+        })
             .then(res => res.json())
-            .then(data => setPlay(data));
+            .then(data => {
+                setPlay(data);
+            });
     }, []);
 
     function PlayertList() {
