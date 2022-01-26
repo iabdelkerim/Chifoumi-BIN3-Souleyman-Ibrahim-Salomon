@@ -9,10 +9,12 @@ import {
     Dialog,
     Heading,
     DialogContainer,
-    View
+    View,
+    Link
 } from '@adobe/react-spectrum';
 import { useEffect, useState } from 'react';
 import { MatchPlay } from '.';
+import {Link as RouterLink} from 'react-router-dom';
 
 function MatchList() {
     const [matchs, setMatchs] = useState();
@@ -32,7 +34,7 @@ function MatchList() {
 
     function createButton() {
         return (
-            <Flex direction="row" justifyContent="space-between">
+            <Flex direction="row" justifyContent="space-between" marginBottom="size-250">
                 <Flex direction="row" gap="size-125" marginEnd="9%">
                     <Button variant="primary" onPress={() => setShow(true)}>
                         New party
@@ -141,13 +143,17 @@ function MatchList() {
             >
                 <Button onPress={disconnect}>Log out</Button>
             </Flex>
-            <View>
+            <View padding="size-500">
                 {modalPlayer()}
                 {createButton()}
                 {matchs === undefined && <span>Loading...</span>}
                 {matchs?.length === 0 && <span>No data</span>}
                 {matchs?.map(match => (
-                    <li key={match._id}>{match._id}</li>
+                    <li key={match._id}>
+                        <Link>
+                            <RouterLink to={`matchList/${match._id}`}>{match._id}</RouterLink>
+                        </Link>
+                    </li>
                 ))}
             </View>
         </>
