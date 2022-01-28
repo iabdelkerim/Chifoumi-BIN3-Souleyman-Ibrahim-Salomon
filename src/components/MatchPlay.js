@@ -61,9 +61,13 @@ function MatchPlay() {
                 height="size-800"
                 gap="size-100"
             >
+<<<<<<< Updated upstream
                 <Button width="size-800">Rock</Button>
                 <Button width="size-800">Paper</Button>
                 <Button width="size-1200">Scissors</Button>
+=======
+                <Card idTurn={id} />
+>>>>>>> Stashed changes
             </Flex>
             <PlayertList />
             <Flex

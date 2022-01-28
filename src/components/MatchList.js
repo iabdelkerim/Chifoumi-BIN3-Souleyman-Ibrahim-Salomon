@@ -69,7 +69,12 @@ function MatchList() {
                     )
                         .then(res => res.json())
                         .then(data => {
+<<<<<<< Updated upstream
                             console.log('get latch', data);
+=======
+                            console.log('data', data);
+                            setShow(true);
+>>>>>>> Stashed changes
                         });
                 } else {
                     window.location.href = '/play';
