@@ -1,13 +1,16 @@
 import React from 'react';
-import { Flex, Heading, View } from '@adobe/react-spectrum';
+import { Button, Flex, Heading, View } from '@adobe/react-spectrum';
 import { useEffect, useState } from 'react';
 import Player from './player';
 import Card from './cards';
+import { useParams } from 'react-router-dom';
 
-function MatchPlay(id) {
-    const [play, setPlay] = useState();
+function MatchPlay() {
+    const { id } = useParams();
+    const [play, setPlay] = useState([]);
+
     useEffect(() => {
-        fetch(`http://fauques.freeboxos.fr:3000/matches/?id='${id}`, {
+        fetch('http://fauques.freeboxos.fr:3000/matches/?id=id', {
             method: 'GET',
             headers: {
                 Authorization: 'Bearer ' + localStorage.getItem('token')
@@ -15,20 +18,20 @@ function MatchPlay(id) {
         })
             .then(res => res.json())
             .then(data => {
-                console.log('match', data);
                 setPlay(data);
             });
-    }, []);
+    }, [id]);
 
     function PlayertList() {
         return (
             <>
-                {play?.map(user => (
-                    <Player player={user} />
+                {play?.map(player => (
+                    <Player player={player} />
                 ))}
             </>
         );
     }
+
     return (
         <View>
             <Flex
@@ -49,7 +52,7 @@ function MatchPlay(id) {
                 height="size-800"
                 gap="size-100"
             >
-                <Card idTurn={play._id} />
+                <Card idTurn={id} />
             </Flex>
             <PlayertList />
             <Flex
@@ -65,5 +68,4 @@ function MatchPlay(id) {
     );
 }
 
-export default MatchPlay
-
+export default MatchPlay;
