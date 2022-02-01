@@ -35,7 +35,7 @@ function MatchPlay() {
                         gap="size-100"
                     >
                         <Heading level={3}>
-                            Player1 : {player.user1.username} 
+                            Player1 : {player.user1.username}
                         </Heading>
                         <Heading level={3}>
                             Player2 : {player.user2.username} 
@@ -68,7 +68,7 @@ function MatchPlay() {
                 height="size-800"
                 gap="size-100"
             >
-                <Card idTurn={play._id} />
+                <Card idTurn={id} />
             </Flex>
             <Flex
                 direction="row"
@@ -83,5 +83,4 @@ function MatchPlay() {
     );
 }
 
-export default MatchPlay
-
+export default MatchPlay;
