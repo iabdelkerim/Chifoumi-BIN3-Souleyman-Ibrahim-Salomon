@@ -46,8 +46,8 @@ function Login() {
     return user ? (
         redirectToMatchList()
     ) : (
-        <View backgroundColor="static-black" width="50%" height="100%">
-            <View padding="size-500">
+        <View backgroundColor="gray-200" width="100%" height="100%">
+            <View padding="size-2400">
                 <Flex direction="column" alignItems="center">
                     <div className="align-height">
                         <Form width="size-3000" height="100%">
@@ -79,8 +79,8 @@ function Login() {
                                     handleSubmit(v);
                                 }}
                             >
-                                <Flex direction="row" gap="size-100">
-                                    <Text>Login </Text>
+                                <Flex direction="row" gap="size-600">
+                                    <Text> Login </Text>
                                 </Flex>
                             </ActionButton>
                         </Form>
