@@ -70,7 +70,7 @@ function MatchPlay() {
             >
                 <Card idTurn={play._id} />
             </Flex>
-            
+            <PlayertList />
             <Flex
                 direction="row"
                 alignItems="center"

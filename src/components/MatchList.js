@@ -13,12 +13,14 @@ import {
     Link
 } from '@adobe/react-spectrum';
 import { useEffect, useState } from 'react';
+import { MatchPlay } from '.';
 import {Link as RouterLink} from 'react-router-dom';
 
 function MatchList() {
     const [matchs, setMatchs] = useState();
     const [show, setShow] = useState(false);
-    const [value, setValue] = useState('');
+    const [name, setValue] = useState('');
+    const [user2, setPlayer2] = useState();
     useEffect(() => {
         fetch('http://fauques.freeboxos.fr:3000/matches', {
             method: 'GET',
@@ -49,12 +51,30 @@ function MatchList() {
                 Authorization: 'Bearer ' + localStorage.getItem('token')
             },
             user: JSON.stringify({
-                username: value
+                username: name
             })
         })
             .then(response => response.json())
             .then(data => {
-                console.log('data', data);
+                if (data.user2 === null) {
+                    fetch(
+                        `http://fauques.freeboxos.fr:3000/matches/?id=${data._id}`,
+                        {
+                            method: 'GET',
+                            headers: {
+                                Authorization:
+                                    'Bearer ' + localStorage.getItem('token')
+                            }
+                        }
+                    )
+                        .then(res => res.json())
+                        .then(data => {
+                            console.log('get latch', data);
+                        });
+                } else {
+                    window.location.href = '/play';
+                    <MatchPlay id={data._id} />;
+                }
             });
         setShow(false);
     }

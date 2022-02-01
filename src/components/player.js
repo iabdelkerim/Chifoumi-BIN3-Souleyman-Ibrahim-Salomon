@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Flex, Heading, View } from '@adobe/react-spectrum';
 
 function Player(player) {
-    console.log('player', player.player.user2.username);
+    console.log('player', player.player.user1.username);
     return (
         <Flex
             direction="row"
@@ -12,10 +12,9 @@ function Player(player) {
             gap="size-100"
         >
             <Heading level={3}>
-                Player1 : {player.player.user2.username} 
+                Player : {player.player.user1.username} - 0
             </Heading>
         </Flex>
-        
     );
 }
 
