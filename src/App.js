@@ -6,8 +6,6 @@ import { Provider, defaultTheme } from '@adobe/react-spectrum';
 import Login from './auth/login';
 import { MatchList, MatchPlay } from './components';
 
-
-
 function App() {
     return (
         <Provider
