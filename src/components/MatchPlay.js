@@ -3,6 +3,7 @@ import { Button, Flex, Heading, View } from '@adobe/react-spectrum';
 import { useEffect, useState } from 'react';
 import Player from './player';
 import { useParams } from 'react-router-dom';
+import Card from './cards';
 
 function MatchPlay() {
     const { id } = useParams();
@@ -33,7 +34,7 @@ function MatchPlay() {
                         gap="size-100"
                     >
                         <Heading level={3}>
-                            Player1 : {player.user1.username} 
+                            Player1 : {player.user1.username}
                         </Heading>
                     </Flex>
                 ))}
@@ -61,9 +62,7 @@ function MatchPlay() {
                 height="size-800"
                 gap="size-100"
             >
-                <Button width="size-800">Rock</Button>
-                <Button width="size-800">Paper</Button>
-                <Button width="size-1200">Scissors</Button>
+                <Card idTurn={id} />
             </Flex>
             <PlayertList />
             <Flex
