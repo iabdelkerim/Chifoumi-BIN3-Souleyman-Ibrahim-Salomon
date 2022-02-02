@@ -6,6 +6,7 @@ import {
     Form,
     TextField,
     Text,
+    Heading,
     ActionButton
 } from '@adobe/react-spectrum';
 
@@ -47,16 +48,19 @@ function Login() {
         redirectToMatchList()
     ) : (
         <View backgroundColor="gray-200" width="100%" height="100%">
-            <View padding="size-2400">
+            <View padding="size-3000">
                 <Flex direction="column" alignItems="center">
                     <div className="align-height">
                         <Form width="size-3000" height="100%">
                             <Flex
                                 direction="column"
-                                alignItems="start"
+                                alignItems="center"
+                                justifyContent="center"
+                                alignContent="center"
                                 gap="size-200"
                             >
-                                <Text alignSelf="center">Login</Text>
+                                <Heading level={1}>Login</Heading>
+
                                 <TextField
                                     width="100%"
                                     key="username"
