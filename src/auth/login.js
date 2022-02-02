@@ -7,6 +7,7 @@ import {
     TextField,
     Text,
     Heading,
+    Image,
     ActionButton
 } from '@adobe/react-spectrum';
 
@@ -59,6 +60,7 @@ function Login() {
                                 alignContent="center"
                                 gap="size-200"
                             >
+                                <Image src={require("../chiffumi_logo.png")} alt="Logo chiffumi" />
                                 <Heading level={1}>Login</Heading>
 
                                 <TextField
