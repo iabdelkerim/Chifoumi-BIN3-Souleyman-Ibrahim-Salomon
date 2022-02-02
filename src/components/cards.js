@@ -4,7 +4,7 @@ import { Text, Item, ActionGroup } from '@adobe/react-spectrum';
 import Hand0 from '@spectrum-icons/workflow/Hand0';
 import Hand from '@spectrum-icons/workflow/Hand';
 import Hand2 from '@spectrum-icons/workflow/Hand2';
-import Turn from './turn';
+import Turn  from './turn';
 
 function Card(idTurn) {
     const [move, setMove] = useState();

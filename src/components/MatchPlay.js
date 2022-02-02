@@ -17,9 +17,7 @@ function MatchPlay() {
             }
         })
             .then(res => res.json())
-            .then(data => {
-                setPlay(data);
-            });
+            .then(data => setPlay(data));
     }, [id]);
 
     function PlayertList() {
@@ -43,7 +41,7 @@ function MatchPlay() {
             >
                 <Heading level={1}>Partie de Chifoumi</Heading>
             </Flex>
-
+            <PlayertList />
             <Flex
                 direction="row"
                 alignItems="center"
@@ -54,7 +52,6 @@ function MatchPlay() {
             >
                 <Card idTurn={id} />
             </Flex>
-            <PlayertList />
             <Flex
                 direction="row"
                 alignItems="center"
