@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Flex, Heading, View } from '@adobe/react-spectrum';
+import { Flex, Heading } from '@adobe/react-spectrum';
 
 function Player(player) {
     console.log('player', player.player.user1.username);
