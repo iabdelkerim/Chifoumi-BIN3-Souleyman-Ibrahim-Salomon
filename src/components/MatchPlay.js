@@ -68,5 +68,4 @@ function MatchPlay() {
     );
 }
 
-export default MatchPlay
-
+export default MatchPlay;
