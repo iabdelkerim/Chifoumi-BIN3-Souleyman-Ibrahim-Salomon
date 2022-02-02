@@ -31,36 +31,38 @@ function MatchPlay() {
     }
 
     return (
-        <View>
-            <Flex
-                direction="row"
-                alignItems="center"
-                justifyContent="center"
-                alignContent="center"
-                gap="size-100"
-            >
-                <Heading level={1}>Partie de Chifoumi</Heading>
-            </Flex>
-            <PlayertList />
-            <Flex
-                direction="row"
-                alignItems="center"
-                justifyContent="center"
-                alignContent="center"
-                height="size-800"
-                gap="size-100"
-            >
-                <Card idTurn={id} />
-            </Flex>
-            <Flex
-                direction="row"
-                alignItems="center"
-                justifyContent="center"
-                alignContent="center"
-                gap="size-100"
-            >
-                <Heading level={4}> Score : 0 - 0</Heading>
-            </Flex>
+        <View backgroundColor="gray-200" width="100%" height="100%">
+            <View padding="size-3000">
+                <Flex
+                    direction="row"
+                    alignItems="center"
+                    justifyContent="center"
+                    alignContent="center"
+                    gap="size-100"
+                >
+                    <Heading level={1}>Partie de Chifoumi</Heading>
+                </Flex>
+                <PlayertList />
+                <Flex
+                    direction="row"
+                    alignItems="center"
+                    justifyContent="center"
+                    alignContent="center"
+                    height="size-800"
+                    gap="size-100"
+                >
+                    <Card idTurn={id} />
+                </Flex>
+                <Flex
+                    direction="row"
+                    alignItems="center"
+                    justifyContent="center"
+                    alignContent="center"
+                    gap="size-100"
+                >
+                    <Heading level={4}> Score : 0 - 0</Heading>
+                </Flex>
+            </View>
         </View>
     );
 }
