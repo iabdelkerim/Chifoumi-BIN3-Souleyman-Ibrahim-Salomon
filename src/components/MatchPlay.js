@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Flex, Heading, View } from '@adobe/react-spectrum';
+import { Flex, Heading, View } from '@adobe/react-spectrum';
 import { useEffect, useState } from 'react';
 import Player from './player';
 import { useParams } from 'react-router-dom';
