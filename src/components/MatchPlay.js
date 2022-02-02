@@ -26,17 +26,7 @@ function MatchPlay() {
         return (
             <>
                 {play?.map(player => (
-                    <Flex
-                        direction="row"
-                        alignItems="center"
-                        justifyContent="center"
-                        alignContent="center"
-                        gap="size-100"
-                    >
-                        <Heading level={3}>
-                            Player1 : {player.user1.username}
-                        </Heading>
-                    </Flex>
+                    <Player player={player} />
                 ))}
             </>
         );
