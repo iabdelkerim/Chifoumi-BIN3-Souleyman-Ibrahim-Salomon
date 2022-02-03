@@ -140,23 +140,33 @@ function MatchList() {
             <Flex
                 direction="row"
                 alignItems="end"
-                margin="size-100"
                 justifyContent="end"
+                gap="size-100"
             >
                 <Button onPress={disconnect}>Log out</Button>
             </Flex>
-            <View padding="size-500">
-                {modalPlayer()}
-                {createButton()}
-                {matchs === undefined && <span>Loading...</span>}
-                {matchs?.length === 0 && <span>No data</span>}
-                {matchs?.map(match => (
-                    <li key={match._id}>
-                        <Link>
-                            <RouterLink to={`matchList/${match._id}`}>{match._id}</RouterLink>
-                        </Link>
-                    </li>
-                ))}
+            <View backgroundColor="gray-200" width="100%" height="100%">
+                <View padding="size-3600">
+                <Flex
+                    direction="row"
+                    alignItems="center"
+                    justifyContent="center"
+                    alignContent="center"
+                    gap="size-100"
+                >
+                    {modalPlayer()}
+                    {createButton()}
+                    {matchs === undefined && <span>Loading...</span>}
+                    {matchs?.length === 0 && <span>No data</span>}
+                    {matchs?.map(match => (
+                        <li key={match._id}>
+                            <Link>
+                                <RouterLink to={`matchList/${match._id}`}>{match._id}</RouterLink>
+                            </Link>
+                        </li>
+                    ))}
+                </Flex>
+            </View>
             </View>
         </>
     );
