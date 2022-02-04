@@ -26,7 +26,10 @@ function MatchList() {
             method: 'GET',
             headers: {
                 Authorization: 'Bearer ' + localStorage.getItem('token')
-            }
+            },
+            user: JSON.stringify({
+                _id: localStorage.getItem('token')
+            })
         })
             .then(res => res.json())
             .then(data => setMatchs(data));
@@ -34,7 +37,11 @@ function MatchList() {
 
     function createButton() {
         return (
-            <Flex direction="row" justifyContent="space-between" marginBottom="size-250">
+            <Flex
+                direction="row"
+                justifyContent="space-between"
+                marginBottom="size-250"
+            >
                 <Flex direction="row" gap="size-125" marginEnd="9%">
                     <Button variant="primary" onPress={() => setShow(true)}>
                         New party
@@ -51,6 +58,7 @@ function MatchList() {
                 Authorization: 'Bearer ' + localStorage.getItem('token')
             },
             user: JSON.stringify({
+                _id: localStorage.getItem('token'),
                 username: name
             })
         })

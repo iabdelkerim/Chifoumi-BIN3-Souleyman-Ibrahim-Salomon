@@ -2,7 +2,7 @@ import React from 'react';
 import { Flex, Heading } from '@adobe/react-spectrum';
 
 function Player(player) {
-    console.log('player', player);
+    console.log('idmatch', player.player._id);
     const { user1, user2 } = player?.player;
     return (
         <Flex

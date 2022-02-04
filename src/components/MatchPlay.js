@@ -2,11 +2,11 @@ import React from 'react';
 import { Flex, Heading, View } from '@adobe/react-spectrum';
 import { useEffect, useState } from 'react';
 import Player from './player';
-import { useParams } from 'react-router-dom';
 import Card from './cards';
 
-function MatchPlay() {
-    const { id } = useParams();
+function MatchPlay(id) {
+    const [idMatch, setIdMatch] = useState('');
+    const [match, setMatch] = useState('');
     const [play, setPlay] = useState([]);
 
     useEffect(() => {
@@ -18,14 +18,16 @@ function MatchPlay() {
         })
             .then(res => res.json())
             .then(data => setPlay(data));
-    }, [id]);
+    }, []);
 
     function PlayertList() {
         return (
             <>
-                {play?.map(player => (
-                    <Player player={player} />
-                ))}
+                {play?.map(player => {
+                    setIdMatch(player._id);
+                    setMatch(player);
+                    return <Player player={player} />;
+                })}
             </>
         );
     }
@@ -50,7 +52,7 @@ function MatchPlay() {
                 height="size-800"
                 gap="size-100"
             >
-                <Card idTurn={id} />
+                <Card idTurn={idMatch} match={match} />
             </Flex>
             <Flex
                 direction="row"
