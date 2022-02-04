@@ -6,7 +6,7 @@ import Hand from '@spectrum-icons/workflow/Hand';
 import Hand2 from '@spectrum-icons/workflow/Hand2';
 import Turn  from './turn';
 
-function Card(idTurn) {
+function Card(idTurn, match) {
     const [move, setMove] = useState();
     return (
         <>
@@ -28,7 +28,7 @@ function Card(idTurn) {
                     <Text>Scissors</Text>
                 </Item>
             </ActionGroup>
-            <Turn id={idTurn} move={move} />
+            <Turn id={idTurn} move={move} match={match} />
         </>
     );
 }
