@@ -33,7 +33,8 @@ function MatchPlay(id) {
     }
 
     return (
-        <View>
+        <View backgroundColor="gray-200" width="100%" height="100%">
+            <View padding="size-3000">
             <Flex
                 direction="row"
                 alignItems="center"
@@ -63,6 +64,7 @@ function MatchPlay(id) {
             >
                 <Heading level={4}> Score : 0 - 0</Heading>
             </Flex>
+            </View>
         </View>
     );
 }
