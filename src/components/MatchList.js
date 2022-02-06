@@ -169,7 +169,9 @@ function MatchList() {
                     {matchs?.map(match => (
                         <li key={match._id}>
                             <Link>
-                                <RouterLink to={`matchList/${match._id}`}>{match._id}</RouterLink>
+                                    <RouterLink to="matchPlay">
+                                        {match._id}
+                                    </RouterLink>
                             </Link>
                         </li>
                     ))}
