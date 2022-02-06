@@ -36,7 +36,8 @@ function MatchPlay({ id }) {
     }
 
     return (
-        <View>
+        <View backgroundColor="gray-200" width="100%" height="100%">
+            <View padding="size-3000">
             <Flex
                 direction="row"
                 alignItems="center"
@@ -57,6 +58,7 @@ function MatchPlay({ id }) {
             >
                 <Card idMatch={idMatch} match={match} />
             </Flex>
+            </View>
         </View>
     );
 }
