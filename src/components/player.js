@@ -2,7 +2,6 @@ import React from 'react';
 import { Flex, Heading } from '@adobe/react-spectrum';
 
 function Player(player) {
-    console.log('idmatch', player.player._id);
     const { user1, user2 } = player?.player;
     return (
         <Flex
@@ -12,8 +11,8 @@ function Player(player) {
             alignContent="center"
             gap="size-100"
         >
-            <Heading level={3}>Player : {user1?.username} - 0</Heading>
-            <Heading level={3}>Player : {user2?.username} - 0</Heading>
+            <Heading level={3}>Player : {user1?.username || '?'} </Heading>
+            <Heading level={3}>Player : {user2?.username || '?'} </Heading>
         </Flex>
     );
 }

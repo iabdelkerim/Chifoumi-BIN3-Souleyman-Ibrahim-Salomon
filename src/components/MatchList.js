@@ -80,7 +80,7 @@ function MatchList() {
                             console.log(data);
                         });
                 } else {
-                    window.location.href = '/matchList/:id';
+                    window.location.href = `/matchPlay/`;
                     <MatchPlay id={data._id} />;
                     setPlayer2(data._id);
                 }

@@ -1,15 +1,16 @@
 import React from 'react';
 import { useState } from 'react';
-import { Text, Item, ActionGroup } from '@adobe/react-spectrum';
+import { Text, Item, ActionGroup, Flex } from '@adobe/react-spectrum';
 import Hand0 from '@spectrum-icons/workflow/Hand0';
 import Hand from '@spectrum-icons/workflow/Hand';
 import Hand2 from '@spectrum-icons/workflow/Hand2';
-import Turn  from './turn';
+import Turn from './turn';
 
-function Card(idTurn, match) {
+function Card({ idMatch, match }) {
     const [move, setMove] = useState();
+    console.log('match', idMatch);
     return (
-        <>
+        <Flex direction="column">
             <ActionGroup
                 onAction={move => {
                     setMove(move);
@@ -28,8 +29,8 @@ function Card(idTurn, match) {
                     <Text>Scissors</Text>
                 </Item>
             </ActionGroup>
-            <Turn id={idTurn} move={move} match={match} />
-        </>
+            <Turn idMatch={idMatch} move={move} match={match} />
+        </Flex>
     );
 }
 

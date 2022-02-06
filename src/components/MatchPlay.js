@@ -4,22 +4,25 @@ import { useEffect, useState } from 'react';
 import Player from './player';
 import Card from './cards';
 
-function MatchPlay(id) {
+function MatchPlay({ id }) {
     const [idMatch, setIdMatch] = useState('');
     const [match, setMatch] = useState('');
     const [play, setPlay] = useState([]);
 
     useEffect(() => {
-        fetch('http://fauques.freeboxos.fr:3000/matches/?id=id', {
+        fetch(`http://fauques.freeboxos.fr:3000/matches/?id=${id}`, {
             method: 'GET',
             headers: {
                 Authorization: 'Bearer ' + localStorage.getItem('token')
             }
         })
             .then(res => res.json())
-            .then(data => setPlay(data));
+            .then(data => {
+                console.log('getbyId', data);
+                setPlay(data);
+            });
     }, []);
-
+    console.log(play);
     function PlayertList() {
         return (
             <>
@@ -52,16 +55,7 @@ function MatchPlay(id) {
                 height="size-800"
                 gap="size-100"
             >
-                <Card idTurn={idMatch} match={match} />
-            </Flex>
-            <Flex
-                direction="row"
-                alignItems="center"
-                justifyContent="center"
-                alignContent="center"
-                gap="size-100"
-            >
-                <Heading level={4}> Score : 0 - 0</Heading>
+                <Card idMatch={idMatch} match={match} />
             </Flex>
         </View>
     );

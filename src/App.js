@@ -18,7 +18,7 @@ function App() {
                 <Route exact path="/" component={Login} />
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/matchList" component={MatchList} />
-                <Route exact path="/play" component={MatchPlay} />
+                <Route exact path="/matchPlay/" component={MatchPlay} />
             </Switch>
         </Provider>
     );
